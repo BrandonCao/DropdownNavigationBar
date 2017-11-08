@@ -57,9 +57,9 @@ class DropdownTableCellTableViewCell: UITableViewCell {
 		contentView.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
 		
 		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1, constant: 0))
-		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -20))
-		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20))
-		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20))
+		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -25))
+		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25))
+		contentView.addConstraint(NSLayoutConstraint(item: checkmark, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25))
 		
 		contentView.addConstraint(NSLayoutConstraint(item: separator, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0))
 		contentView.addConstraint(NSLayoutConstraint(item: separator, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: 0))

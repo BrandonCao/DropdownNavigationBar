@@ -8,38 +8,28 @@
 
 import UIKit
 
-public struct ArrowButtonProperties {
-	
-	public struct Text {
-		public static var color: UIColor = UIColor.white
-		public static var selectedColor: UIColor = UIColor.gray
-		public static var font: UIFont = UIFont.boldSystemFont(ofSize: 18)
-	}
-}
 
 open class ArrowButton: UIButton {
 	
 	let padding: CGFloat = 10
 	let size: CGFloat = 15
+	open var fontSize:CGFloat = 18
 	
-	// MARK: - Views
 	open lazy var label:UILabel = {
 		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textColor = UIColor.black;
+		label.font = UIFont.boldSystemFont(ofSize: self.fontSize)
 		return label
 	}()
 	
 	open lazy var arrow: UIImageView = {
 		let arrow = UIImageView()
-		arrow.translatesAutoresizingMaskIntoConstraints = false
 		arrow.image = UIImage(named: "dropdown_arrow")
 		return arrow
 	}()
 	
 	public init(){
-		super.init(frame: .zero)
-		
+		super.init(frame: .zero)		
 		addSubview(label)
 		addSubview(arrow)
 	}
@@ -55,6 +45,13 @@ open class ArrowButton: UIButton {
 		
 		arrow.frame.size = CGSize(width: size, height: size)
 		arrow.center = CGPoint(x: label.frame.maxX + padding, y: bounds.size.height / 2)
+	}
+	
+	open override func sizeThatFits(_ size: CGSize) -> CGSize {
+		label.sizeToFit()
+		
+		return CGSize(width: label.frame.size.width+15*2+padding,
+		              height: label.frame.size.height)
 	}
 	
 }

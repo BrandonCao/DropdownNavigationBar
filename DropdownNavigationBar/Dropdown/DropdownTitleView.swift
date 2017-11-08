@@ -17,6 +17,7 @@ open class DropdownTitleView: UIView {
 	public init?(navigationController: UINavigationController, title: String){
 		super.init(frame: CGRect.zero)
 		
+		arrowButton = ArrowButton()
 		arrowButton.label.text = title
 		addSubview(arrowButton)
 		
